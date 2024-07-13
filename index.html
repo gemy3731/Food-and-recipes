@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="text-white">
+
+<div class="loader position-fixed top-0 start-0 end-0 bottom-0 bg-black d-flex justify-content-center align-items-center">
+    <i class="fas fa-spinner fa-spin fa-4x"></i>
+</div>
+
+    <!-- -----------------navBar--------------- -->
+     <nav class="position-fixed top-0 bottom-0 d-flex">
+        <div class="bg-black sideBar ">
+            <div class="container sideBarDark d-flex flex-column justify-content-between py-5 ps-4 pe-1">
+                <div class="d-flex flex-column">
+                    <a id="searchLink">Search</a>
+                    <a id="catLink" >Categories</a>
+                    <a id="areaLink">Area</a>
+                    <a id="IngredientLink">Ingredients</a>
+                    <a id="contactLink">Contact Us</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-globe"></i>
+                    <p class="copyRight">Copyright Â© 2019 All Rights Reserved.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="container sideBarLight d-flex flex-column justify-content-between align-items-center px-2 py-4">
+                <img src="images/logo.png" alt="">
+                <i class="clossIcon d-none fa-solid fa-x text-black fs-2 "></i>
+                <i class="openIcon fa-solid fa-bars text-black fs-2"></i>
+                <div class="d-flex flex-column">
+                    <i class="fa-solid fa-globe text-black mb-2"></i>
+                    <i class="fa-solid fa-share-nodes text-black"></i>
+                </div>
+            </div>
+        </div>
+     </nav>
+
+     <!-- ------------------main------------- -->
+      <main class="">
+        <div class="container py-5">
+            <div class="mainMeals row gy-4">
+                
+            </div>
+        </div>
+      </main>
+    
+      <!-- ---------------Details------------ -->
+      <section id="details" class="d-none">
+        <div class="container p-5">
+            <div class="detailMeals row">
+            </div>
+        </div>
+      </section>
+
+      <!-- -------------categories-------------- -->
+       <section id="categories" class="d-none">
+        <div class="container py-5">
+            <div class="catMeals row gy-4">
+            </div>
+        </div>
+       </section>
+       <!-- -------------onecategory-------------- -->
+       <section id="onecategory" class="d-none">
+        <div class="container py-5">
+            <div class="oneCatMeals row gy-4">
+            </div>
+        </div>
+       </section>
+       <!-- -------------Area--------------- -->
+        <section id="area" class="d-none">
+            <div class="container py-5">
+                <div class="area row gy-4">
+                    
+                </div>
+            </div>
+        </section>
+<!-- -------------------AreaMeal------------------- -->
+        <section id="areaMeal" class="d-none">
+            <div class="container py-5">
+                <div class="areaMeal row gy-4">
+                    
+                </div>
+            </div>
+        </section>
+<!-- ---------------------Ingredients---------------- -->
+ <section id="ingredient" class="d-none">
+    <div class="container py-5">
+        <div class="ingredient row gy-4">
+            
+        </div>
+    </div>
+ </section>
+ <!-- -------------------ingredientMeal------------------ -->
+ <section id="ingredientMeal" class="d-none">
+    <div class="container py-5">
+        <div class="ingredientMeal row gy-4">
+            
+        </div>
+    </div>
+ </section>
+ <!-- ----------------Contact------------------ -->
+  <section id="contact" class="d-none vh-100">
+    <div class="container h-100 d-flex align-items-center justify-content-center align-content-center flex-column py-5">
+        <div class="row w-75 mx-auto gy-4">
+            <div class="col-md-6">
+                <input type="text" placeholder="Enter Your Name" class="userName form-control">
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Special characters and numbers not allowed
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <input type="email" placeholder="Enter Your Email" class="userEmail form-control">
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Email not valid *exemple@yyy.zzz
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <input type="tel" placeholder="Enter Your Phone" class="userPhone form-control">
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Enter valid Phone Number
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <input type="number" placeholder="Enter Your Age" class="userAge form-control">
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Enter valid age
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <form action="">
+
+                    <input type="password" autocomplete placeholder="Enter Your Password" class="userPass form-control">
+                </form>
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Enter valid password *Minimum eight characters, at least one letter and one number:*
+
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <form action="">
+
+                    <input type="password" autocomplete placeholder="Repassword" class="userRepass form-control">
+                </form>
+                <div class="alert alert-danger mt-2 text-center d-none" role="alert">
+                    Enter valid repassword
+                  </div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-4">
+            <button class="submitBtn btn btn-outline-danger m-auto disabled">Submit</button>
+        </div>
+    </div>
+  </section>
+  <!-- --------------------Search------------------- -->
+   <section id="search" class="d-none">
+    <div class="container py-5">
+        <div class="row gy-4 mb-5">
+           <div class="col-md-6">
+            <input type="search" class="searchByName form-control bg-black text-white" placeholder="Search By Name">
+           </div>
+           <div class="col-md-6">
+            <input type="search" maxlength="1" class="searchByFirstLetter form-control bg-black text-white" placeholder="Search By First Letter">
+           </div>
+        </div>
+        <div class="searchResult row gy-4">
+            
+        </div>
+    </div>
+   </section>
+
+
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+</html>

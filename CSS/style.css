@@ -1,0 +1,45 @@
+body{
+    background: #0d0d0d;
+}
+.loader{
+    z-index: 999;
+}
+
+/* ---------nav--------- */
+nav img{
+    width: 50px;
+}
+nav{
+    left: -258px;
+    z-index: 50;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 15px;
+}
+.copyRight{
+    max-width: 230px;
+}
+.sideBarDark,.sideBarLight{
+    min-height: 100vh;
+}
+i,.ingredientItem,.areaSelected{
+    cursor: pointer;
+}
+/* ------main------ */
+.layer{
+    transform: translateY(110%);
+    transition: all 0.7s;
+}
+.item, a{
+    cursor: pointer;
+}
+
+.itemHovered:hover .layer{
+    transform: translateY(0)
+}
+
+#search input::placeholder{
+color: white;
+}
