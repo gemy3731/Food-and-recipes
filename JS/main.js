@@ -15,12 +15,12 @@ $(open).on("click",function(){
 // ------------------Home------------------
 
 async function homeMeals(){
+   $(".loader").addClass("d-flex")
+   $(".loader").removeClass("d-none")
    let myHttps = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=");
    let data = await myHttps.json();
-   
    if (data) {
       load()
-
       displayMeals(data.meals);
       $("main .item").on("click",function(e){
       detailMeals(e.currentTarget.id);
@@ -367,7 +367,7 @@ async function ingredient(){
 
 
 let searchByNameInput = $(".searchByName")
-let searchByLetterInput = $(".searchByLetter")
+let searchByLetterInput = $(".searchByFirstLetter")
 $("#searchLink").on("click",function(e){
    $("main").addClass("d-none");
    $("#areaMeal").addClass("d-none");
@@ -400,7 +400,7 @@ $("#searchLink").on("click",function(e){
 
 function displaySearchResult(data) {
    let container = "";
-   for (let i = 0; i < data.length; i++) {
+   for (let i = 0; i <data.length; i++) {
       container += `<div class="col-md-3">
                 <div id="${data[i].idMeal}" class="searchItem itemHovered position-relative overflow-hidden">
                     <img src="${data[i].strMealThumb}" class="w-100" alt="">
@@ -418,7 +418,8 @@ function displaySearchResult(data) {
 async function searchByFirstLetter(value){ 
    $(".loader").addClass("d-flex")
    $(".loader").removeClass("d-none")
-   let myHttps = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`);
+   let x= value;
+   let myHttps = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${x=x==undefined?"a":x}`);
    let data = await myHttps.json();
    if (data) {
       load()
@@ -430,7 +431,7 @@ async function searchByFirstLetter(value){
    }
  }
 
- $(searchByFirstLetter).on("input",function(e){
+ $(searchByLetterInput).on("input",function(e){
    searchByFirstLetter($(e.target).val());
 })
 
@@ -516,10 +517,9 @@ $(userPass).on("input",function(){
    validation()
 })
 
-let x;
 
 $(userRepass).on("input",function(){
-    x = 10
+   
    if (userRepass.val()==userPass.val()) {
       userRepass.next().addClass("d-none");
       isRepassValide = true;
@@ -533,7 +533,7 @@ $(userRepass).on("input",function(){
 
 
 function validation(){
-   console.log(isRepassValide&&isPassValide&&isAgeValide&&isPhoneValide&&isEmailValide&&isNameValide);
+   
    if (isRepassValide&&isPassValide&&isAgeValide&&isPhoneValide&&isEmailValide&&isNameValide) {
       $(".submitBtn").removeClass("disabled");
    }else{
@@ -552,6 +552,8 @@ $("#contactLink").on("click",function(){
    $("#ingredient").addClass("d-none");
    $("#ingredientMeal").addClass("d-none");
    $("#search").addClass("d-none");
+   $(".loader").removeClass("d-flex")
+   $(".loader").addClass("d-none")
    $("#contact").removeClass("d-none");
 })
 // --------------loading-------------
@@ -560,6 +562,7 @@ function load(){
          $(".loader").removeClass("d-flex")
       })
 }
+
 
 
 
